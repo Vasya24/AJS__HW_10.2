@@ -1,10 +1,10 @@
-import GameSavingLoader from './components/gsloader'
+import GameSavingLoader from './components/GameSavingLoader';
 
-GameSavingLoader.load().then(() => {
-    // saving объект класса GameSaving
-  console.log(GameSavingLoader)
-
-  }, (error) => {
-    console.error(error)
-  });
-
+(async () => {
+  try {
+    const game = await GameSavingLoader.load();
+    return game;
+  } catch (error) {
+    return error;
+  }
+})();
